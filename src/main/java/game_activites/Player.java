@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class Player {
+
+    //class of players, holds name, position and winning condition
     private String name;
     private int position;
     private boolean winner;
