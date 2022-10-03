@@ -71,8 +71,13 @@ public class Controls {
 
             //player moves
             else {
-                System.out.println(player.getName().substring(0,1).toUpperCase()+player.getName().substring(1) + " rolls " + roll[0] + "," + roll[1] + ". " + player.getName().substring(0,1).toUpperCase()+player.getName().substring(1) + " moves from " + player.getPosition() + " to " + (player.getPosition() + sum));
-                player.setPosition(player.getPosition() + sum);
+                String name = player.getName().substring(0,1).toUpperCase()+player.getName().substring(1);
+                int position = player.getPosition();
+                int next_position = player.getPosition() + sum;
+
+                System.out.println(name + " rolls " + roll[0] + "," + roll[1] + ". " + name + " moves from " + position + " to " + next_position);
+
+                player.setPosition(next_position);
             }
 
             //overwriting player in active_index database
