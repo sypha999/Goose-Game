@@ -13,11 +13,12 @@ public class Controls {
     //A list to store all active players
     //Using this list as the database
     List<Player> active_players = new ArrayList<>();
+    List<String> added_players = new ArrayList<>();
 
     public void addPlayer(String name) {
 
         //Check if player already exists
-        if (active_players.contains(name.toLowerCase())) {
+        if (added_players.contains(name.toLowerCase())) {
             System.out.println(name + ": Already an existing player.");
         }
 
@@ -25,9 +26,13 @@ public class Controls {
         else {
             Player player = new Player(name, 0, false);
             active_players.add(player);
+            added_players.add(name);
             System.out.print("Players: ");
             for(Player play:active_players){
-                System.out.print(play.getName().substring(0,1).toUpperCase()+play.getName().substring(1)+", ".replace(",",""));
+
+                String named = play.getName().substring(0,1).toUpperCase()+play.getName().substring(1);
+
+                System.out.print(named +", ");
             }
             System.out.println("\n");
         }

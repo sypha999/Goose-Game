@@ -23,7 +23,7 @@ public class GooseApp {
 
         while (!found_winner) {
 
-           String player_input = scanner.nextLine().stripIndent();
+           String player_input = scanner.nextLine();
            String [] input = player_input.split(" ");
 
             if(input[0].equalsIgnoreCase( "quit"))
